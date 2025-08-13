@@ -1,0 +1,106 @@
+header {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 0rem 0;
+    box-shadow: var(--sombra-padrao);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease-in-out; /* Transição suave para efeitos */
+    will-change: transform, box-shadow; /* Otimização de animação */
+}
+
+header.rolando {
+    transform: translateY(-50px); /* Move o header para cima */
+    box-shadow: none;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--azul-claro);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--azul-claro);
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 1rem 0.5rem; /* Mais padding para o cabeçalho em telas pequenas */
+    }
+    .logo {
+        font-size: 1.8rem;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0.3rem 0.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+
+}

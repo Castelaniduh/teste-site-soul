@@ -1,0 +1,118 @@
+/* ============================================================= */
+/* CSS FINAL P/ CARROSSEL DE DEPOIMENTOS (EFEITO COVERFLOW)    */
+/* ============================================================= */
+
+/* --- A Seção Principal --- */
+.depoimentos-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+    overflow: hidden; 
+}
+
+/* --- O Alinhamento entre Texto e Carrossel (Desktop) --- */
+.depoimentos-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center; 
+}
+
+/* --- O Bloco de Texto --- */
+.depoimentos-texto-lateral {
+    flex: 1; 
+    min-width: 320px; 
+    text-align: left; 
+}
+
+.depoimentos-texto-lateral h2 {
+    font-size: 2.5rem;
+    color: var(--azul-escuro);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.depoimentos-texto-lateral h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--azul-claro);
+    margin: 10px 0 0; 
+    border-radius: 2px;
+}
+
+.depoimentos-texto-lateral p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- O Container do Carrossel --- */
+.depoimentos-carousel-container {
+    flex: 1.5; 
+    min-width: 400px;
+    position: relative;
+}
+
+/* --- O Carrossel (Swiper) --- */
+.mySwiperDepoimentos {
+    width: 100%;
+    /* A altura será definida pelo conteúdo + padding */
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+}
+
+/* --- O Slide Individual --- */
+.mySwiperDepoimentos .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    /* TAMANHO MENOR E PROPORCIONAL */
+    width: 200px; 
+    height: 320px; 
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* --- O Vídeo (iframe) --- */
+.mySwiperDepoimentos .swiper-slide iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- Setas e Paginação --- */
+.depoimentos-carousel-container .swiper-button-next,
+.depoimentos-carousel-container .swiper-button-prev {
+    color: var(--azul-escuro) !important;
+}
+
+.depoimentos-carousel-container .swiper-pagination-bullet-active {
+    background: var(--azul-escuro) !important;
+}
+
+/* --- Responsividade (Ajustes para Tablet e Mobile) --- */
+@media (max-width: 992px) {
+    .depoimentos-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    .depoimentos-texto-lateral {
+        text-align: center; 
+    }
+    .depoimentos-texto-lateral h2::after {
+        margin: 10px auto 0; 
+    }
+    .depoimentos-carousel-container {
+        width: 100%; 
+        min-width: unset; 
+    }
+}
+
+@media (max-width: 768px) {
+    .mySwiperDepoimentos .swiper-slide {
+        width: 180px; 
+        height: 300px;
+    }
+}
